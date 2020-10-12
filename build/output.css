@@ -21616,6 +21616,10 @@ video {
   src: url(fonts/SourceCodePro-Regular.ttf);
 }
 
+.sidebar li:hover {
+  color: #E70342;
+}
+
 @media (max-width: 767px) {
   .sm\:container {
     width: 100%;
@@ -84495,4 +84499,3 @@ video {
             animation: bounce 1s infinite;
   }
 }
-

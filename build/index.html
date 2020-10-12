@@ -6,8 +6,8 @@
     </head>
 
     <body class="font-body leading-loose">
-        <div class="header bg-russian-violet text-rusty-red grid grid-rows-2 grid-flow-col justify-center items-center h-64">
-            <div class="main grid row-span-2 col-span-2 items-center">
+        <div class="header p-5 bg-russian-violet text-rusty-red flex justify-center items-center h-64">
+            <div class="main flex flex-col items-center">
                 <div class="items-center">
                     <img class="h-24 inline" src="static/moonnstarts.svg" alt="moon and stars" >
                     <h1 class="text-5xl inline">Lunatic</h1>
@@ -16,33 +16,35 @@
                 <p class="text-xl">This is a cool programming language created for hackers! Check out our documentation!</p>
             </div>
             
-            <img class="h-20 row-span-1 col-span-1" src="static/meteor.svg" alt="meteor" >
-            <img class="h-16 row-span-1 col-span-1 self-center" src="static/meteor.svg" alt="meteor" >
-            <img class="h-16 row-span-1 col-span-1 self-end" src="static/meteor.svg" alt="meteor" >
+            <img class="h-20 self-start" src="static/meteor.svg" alt="meteor" >
+            <img class="h-12" src="static/meteor.svg" alt="meteor" >
+            <img class="h-16 self-end" src="static/meteor.svg" alt="meteor" >
         </div>
 
-        <div class="sidebar bg-white text-tyrian-purple p-5">
-            <ol class="list-decimal list-inside">
-                <li>Why Use It?</li>
-                <li>How To Use?</li>
-                <li>For Who?</li>
-                <li>Contact Info</li>
-                <li>About Me</li>
-            </ol>
-        </div>
-
-        <div class="content bg-white m-5">
-            <h2 class=" text-tyrian-purple text-3xl">Why use Lunatic?</h2>
-            <p class="text-xl">You should use Lunatic because we care about speed, efficiency and we made it with love. 
-                I don’t know what else to say about it now so you will need to just try on your own! Auf wiedersehen!</p>
-
-            <h2 class=" text-tyrian-purple text-3xl">How to use it?</h2>
-            <p class="text-xl">You should check our documentation and learn before digging in! Don’t be like Luisa, 
-                starting things you never tried before without doing your research first!</p>
-
-            <h2 class=" text-tyrian-purple text-3xl">For who is it Made?</h2>
-            <p class="text-xl">You should use Lunatic because we care about speed, efficiency and we made it with love. 
-                I don’t know what else to say about it now so you will need to just try on your own! Auf wiedersehen!</p>
+        <div class="flex flex-row items-start">
+            <div class="sidebar p-5 mr-5 text-xl h-screen shadow-lg hidden lg:flex">
+                <ul class="cursor-pointer divide-y divide-black divide-opacity-25">
+                    <li>Why Use It?</li>
+                    <li>How To Use?</li>
+                    <li>For Who?</li>
+                    <li>Contact Info</li>
+                    <li>About Me</li>
+                </ul>
+            </div>
+    
+            <div class="content py-2 px-5 w-4/5">
+                <h2 class=" text-tyrian-purple text-3xl">Why use Lunatic?</h2>
+                <p class="text-xl">You should use Lunatic because we care about speed, efficiency and we made it with love. 
+                    I don’t know what else to say about it now so you will need to just try on your own! Auf wiedersehen!</p>
+    
+                <h2 class=" text-tyrian-purple text-3xl">How to use it?</h2>
+                <p class="text-xl">You should check our documentation and learn before digging in! Don’t be like Luisa, 
+                    starting things you never tried before without doing your research first!</p>
+    
+                <h2 class=" text-tyrian-purple text-3xl">For who is it Made?</h2>
+                <p class="text-xl">You should use Lunatic because we care about speed, efficiency and we made it with love. 
+                    I don’t know what else to say about it now so you will need to just try on your own! Auf wiedersehen!</p>
+            </div>
         </div>
         
     </body>

@@ -9,3 +9,6 @@
     src: url(fonts/SourceCodePro-Regular.ttf);
 }
 
+.sidebar li:hover {
+    color: #E70342;
+}
