@@ -21620,6 +21620,10 @@ video {
   color: #E70342;
 }
 
+.header-title {
+  font-size: 6rem;
+}
+
 @media (max-width: 767px) {
   .sm\:container {
     width: 100%;

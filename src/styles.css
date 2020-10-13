@@ -12,3 +12,7 @@
 .sidebar li:hover {
     color: #E70342;
 }
+
+.header-title {
+    font-size: 6rem;
+}

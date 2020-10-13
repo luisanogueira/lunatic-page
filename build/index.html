@@ -6,23 +6,24 @@
     </head>
 
     <body class="font-body leading-loose">
-        <div class="header p-5 bg-russian-violet text-rusty-red flex justify-center items-center h-64">
+        <div class="header p-5 bg-russian-violet text-rusty-red flex justify-center items-center h-auto">
             <div class="main flex flex-col items-center">
-                <div class="items-center">
-                    <img class="h-24 inline" src="static/moonnstarts.svg" alt="moon and stars" >
-                    <h1 class="text-5xl inline">Lunatic</h1>
+                <div class="flex items-center">
+                    <img class="h-20 inline" src="static/moon.svg" alt="moon" >
+                    <h1 class="header-title inline">Lunatic</h1>
                 </div>
                 
-                <p class="text-xl">This is a cool programming language created for hackers! Check out our documentation!</p>
+                <p class="text-2xl">This is a cool programming language created for hackers! Check out our documentation!</p>
             </div>
-            
-            <img class="h-20 self-start" src="static/meteor.svg" alt="meteor" >
-            <img class="h-12" src="static/meteor.svg" alt="meteor" >
-            <img class="h-16 self-end" src="static/meteor.svg" alt="meteor" >
+            <div class="meteors grid grid-cols-4 grid-rows-3 gap-4">
+                <img class="h-20 col-start-4" src="static/meteor.svg" alt="meteor" >
+                <img class="h-12 col-start-3 row-start-3" src="static/meteor.svg" alt="meteor" >
+                <img class="h-16 col-start-2" src="static/meteor.svg" alt="meteor" >
+            </div>
         </div>
 
         <div class="flex flex-row items-start">
-            <div class="sidebar p-5 mr-5 text-xl h-screen shadow-lg hidden lg:flex">
+            <div class="sidebar p-5 text-xl h-screen shadow-lg hidden lg:flex">
                 <ul class="cursor-pointer divide-y divide-black divide-opacity-25">
                     <li>Why Use It?</li>
                     <li>How To Use?</li>
@@ -32,7 +33,7 @@
                 </ul>
             </div>
     
-            <div class="content py-2 px-5 w-4/5">
+            <div class="content py-2 px-5 w-screen lg:w-3/5">
                 <h2 class=" text-tyrian-purple text-3xl">Why use Lunatic?</h2>
                 <p class="text-xl">You should use Lunatic because we care about speed, efficiency and we made it with love. 
                     I don’t know what else to say about it now so you will need to just try on your own! Auf wiedersehen!</p>
@@ -45,6 +46,8 @@
                 <p class="text-xl">You should use Lunatic because we care about speed, efficiency and we made it with love. 
                     I don’t know what else to say about it now so you will need to just try on your own! Auf wiedersehen!</p>
             </div>
+
+            <img class="h-16 col-start-2" src="static/meteor-dark.svg" alt="meteor" >
         </div>
         
     </body>
