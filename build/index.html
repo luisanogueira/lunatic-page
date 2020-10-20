@@ -29,6 +29,7 @@
                     <li><a href="#why-use">Why Use It?</a></li>
                     <li><a href="#how-to-use">How To Use?</a></li>
                     <li><a href="#for-who">For Who?</a></li>
+                    <li><a href="#examples">Examples</a></li>
                     <li><a href="#about">About Me</a></li>
                     <li><a href="#contact">Contact Info</a></li>
                 </ul>
@@ -36,27 +37,69 @@
     
             <div class="content p-5 w-screen lg:w-3/6">
                 <h2 id="why-use" class="text-tyrian-purple text-3xl">Why use Lunatic?</h2>
-                <p class="text-xl">You should use Lunatic because we care about speed, efficiency and we made it with love. 
-                    I don’t know what else to say about it now so you will need to just try on your own! Auf wiedersehen!</p>
+                <p class="text-xl mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown 
+                    printer took a galley of type and scrambled it to make a type specimen book. 
+                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
     
                 <h2 id="how-to-use" class="text-tyrian-purple text-3xl">How to use it?</h2>
-                <p class="text-xl">You should check our documentation and learn before digging in! Don’t be like Luisa, 
-                    starting things you never tried before without doing your research first!</p>
+                <p class="text-xl mb-4">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration 
+                    in some form, by injected humour, or randomised words which don't look even slightly believable. 
+                    If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
     
                 <h2 id="for-who" class="text-tyrian-purple text-3xl">For who is it Made?</h2>
-                <p class="text-xl">You should use Lunatic because we care about speed, efficiency and we made it with love. 
-                    I don’t know what else to say about it now so you will need to just try on your own! Auf wiedersehen!</p>
+                <p class="text-xl mb-4">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', 
+                    making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, 
+                    and a search for 'lorem ipsum' will uncover many web sites still in their infancy. 
+                    Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+
+                <h2 id="examples" class="text-tyrian-purple text-3xl">Examples</h2>
+                <p class="text-xl mb-4">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', 
+                    making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, 
+                    and a search for 'lorem ipsum' will uncover many web sites still in their infancy. 
+                    Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+                
+                <div class="flex flex-wrap lg:justify-between">
+                    <div class="my-4 p-5 max-w-sm bg-black rounded-lg shadow-xl">
+                        <code class="text-platinum leading-normal">
+                        const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key], obj)
+                        const compose = (...fns) => res => fns.reduce((accum, next) => next(accum), res)
+                        const unfold = (f, seed) => {
+                            const go = (f, seed, acc) => {
+                            const res = f(seed)
+                            return res ? go(f, res[1], acc.concat([res[0]])) : acc
+                            }
+                            return go(f, seed, [])
+                        }
+                        </code>
+                    </div>
+    
+                    <div class="my-4 p-5 max-w-sm bg-black rounded-lg shadow-xl">
+                        <code class="text-platinum leading-normal">
+                        const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key], obj)
+                        const compose = (...fns) => res => fns.reduce((accum, next) => next(accum), res)
+                        const unfold = (f, seed) => {
+                            const go = (f, seed, acc) => {
+                            const res = f(seed)
+                            return res ? go(f, res[1], acc.concat([res[0]])) : acc
+                            }
+                            return go(f, seed, [])
+                        }
+                        </code>
+                    </div>
+                </div>
 
                 <h2 id="about" class="text-tyrian-purple text-3xl">About Me</h2>
-                <p class="text-xl">Hi, I'm Bernard!
+                <p class="text-xl mb-4">Hi, I'm Bernard!
                 I'm an independent consultant, specialized in providing complex web solutions. If you are looking for a complete web 
                 application or just need help with your React.js frontend drop me an email!
                 Previously, I made the browser more awesome at cliqz and wrote software to push boundaries of science for the ATLAS experiment at CERN.
                 If you are interested in reading more of my thoughts check out my blog.</p>
                 
                 <h2 id="contact" class="text-tyrian-purple text-3xl">Contact</h2>
-                <p class="text-xl">Send me an <a class="text-rusty-red" href="mailto:me@kolobara.com">email</a></p>
-                <p class="text-xl">Follow me on <a class="text-rusty-red" href="https://twitter.com/bkolobara" target="_blank">Twitter</a> 
+                <p class="text-xl mb-4">Send me an <a class="text-rusty-red" href="mailto:me@kolobara.com">email</a></p>
+                <p class="text-xl mb-4">Follow me on <a class="text-rusty-red" href="https://twitter.com/bkolobara" target="_blank">Twitter</a> 
                     and check the <a class="text-rusty-red" href="https://github.com/lunatic-lang" target="_blank">Lunatic</a> project!</p>
             </div>
 

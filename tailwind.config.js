@@ -18,6 +18,7 @@ module.exports = {
         'russian-violet': '#170940',
         'rusty-red': '#E70342',
         'tyrian-purple': '#61063F',
+        'platinum': '#EBEBEB',
       },
       spacing: {
         
