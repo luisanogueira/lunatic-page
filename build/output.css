@@ -21624,6 +21624,12 @@ video {
   font-size: 6rem;
 }
 
+@media only screen and (max-width: 767px) {
+  .header-title {
+    font-size: 3.5rem;
+  }
+}
+
 @media (max-width: 767px) {
   .sm\:container {
     width: 100%;

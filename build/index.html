@@ -3,22 +3,23 @@
     <head>
         <title>Lunatic</title>
         <link rel="stylesheet" href="output.css" >
+        <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
 
     <body class="font-body leading-loose">
-        <div class="header p-5 bg-russian-violet text-rusty-red flex justify-center items-center h-auto">
-            <div class="main flex flex-col items-center w-screen">
+        <div class="header p-5 bg-russian-violet text-rusty-red flex lg:justify-center items-center h-auto">
+            <div class="main flex flex-col items-center">
                 <div class="flex items-center">
-                    <img class="h-20 inline" src="static/moon.svg" alt="moon" >
+                    <img class="h-12 lg:h-20 inline" src="static/moon.svg" alt="moon" >
                     <h1 class="header-title inline">Lunatic</h1>
                 </div>
                 
-                <p class="text-2xl">This is a cool programming language created for hackers! Check out our documentation!</p>
+                <p class="text-xl lg:text-2xl">This is a cool programming language created for hackers! Check out our documentation!</p>
             </div>
-            <div class="meteors grid grid-cols-4 grid-rows-3 gap-4">
-                <img class="h-20 col-start-4" src="static/meteor.svg" alt="meteor" >
-                <img class="h-12 col-start-3 row-start-3" src="static/meteor.svg" alt="meteor" >
-                <img class="h-16 col-start-2" src="static/meteor.svg" alt="meteor" >
+            <div class="meteors grid grid-cols-2 lg:grid-cols-4 lg:grid-rows-3 gap-4">
+                <img class="h-32 lg:h-20 col-start-1 lg:col-start-4" src="static/meteor.svg" alt="meteor" >
+                <img class="hidden lg:inline h-12 col-start-3 row-start-3" src="static/meteor.svg" alt="meteor" >
+                <img class="h-24 lg:h-16 lg:col-start-2" src="static/meteor.svg" alt="meteor" >
             </div>
         </div>
 
@@ -33,7 +34,7 @@
                 </ul>
             </div>
     
-            <div class="content p-5 w-screen lg:w-3/5">
+            <div class="content p-5 w-screen lg:w-3/6">
                 <h2 class=" text-tyrian-purple text-3xl">Why use Lunatic?</h2>
                 <p class="text-xl">You should use Lunatic because we care about speed, efficiency and we made it with love. 
                     I don’t know what else to say about it now so you will need to just try on your own! Auf wiedersehen!</p>
@@ -47,7 +48,7 @@
                     I don’t know what else to say about it now so you will need to just try on your own! Auf wiedersehen!</p>
             </div>
 
-            <img class="h-16 col-start-2 w-1/5" src="static/meteor-dark.svg" alt="meteor" >
+            <img class="hidden lg:inline h-16 col-start-2 w-1/5" src="static/meteor-dark.svg" alt="meteor" >
         </div>
     </body>
 </html>
