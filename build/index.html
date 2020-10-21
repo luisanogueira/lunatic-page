@@ -46,20 +46,20 @@
                     <p><a class="text-rusty-red" href="https://www.erlang.org/" target="_blank">Erlang/OTP</a> 
                         and the way of structuring execution into actors left a specially strong impression. In a world where many are arguing between a monolithic 
                         and microservice based application structure approach, Erlang lets you start building your application on a single server (monolithic), 
-                        but later allows you to scale up and get distribution for “free”. 
+                        but later allows you to scale up and get distribution for "free". 
                         This is possible because the programming model is based on independent actors communicating through messages. 
                         There is no difference to these actors if they run on the same machine or are spread across a cluster of machines. 
-                        In most cases you don’t need to adapt your code at all to scale up.</p>
-                    <p>Fault tolerance is another benefit of Erlang. 
+                        In most cases you don't need to adapt your code at all to scale up.</p>
+                    <p>Fault tolerance is another benefit of Erlang.
                         The idea of isolating the state of each actor allows you to create truly fault tolerant environments. 
                         If failure is limited to one actor, the whole system becomes more resilient.</p>
                     <p>Sadly, Erlang also has some drawbacks. I would not consider it a fast language, therefore the only way of achieving high performance is 
                         dropping down to C and writing <a class="text-rusty-red" href="http://erlang.org/doc/tutorial/nif.html" target="_blank">NIFs</a>. 
                         In this case you would lose all the benefits mentioned earlier, and a bug in your C code could take down the whole application. 
-                        If you don’t have bugs in your code, but don’t follow strict rules of writing NIFs, you could end up blocking the execution and endangering your whole application.</p>
+                        If you don't have bugs in your code, but don't follow strict rules of writing NIFs, you could end up blocking the execution and endangering your whole application.</p>
                     <p>I wanted to bring the power of Erlang to other programming languages and at the same time address these shortcomings. 
                         I felt like there was a unique opportunity to do so with the recent development of 
-                        <a class="text-rusty-red" href="https://webassembly.org/" target="_blank">WebAssembly</a>. That’s how Lunatic’s idea was created.</p>
+                        <a class="text-rusty-red" href="https://webassembly.org/" target="_blank">WebAssembly</a>. That's how Lunatic's idea was created.</p>
                 </div>
     
                 <h2 id="what-is-lunatic" class="text-tyrian-purple text-3xl">What is Lunatic?</h2>
@@ -93,11 +93,11 @@
                 <h2 id="design" class="text-tyrian-purple text-3xl">Design</h2>
                 <div class="text-xl mb-6 space-y-6">
                     <p>Lunatic is written in Rust and uses Mozilla's <a class="text-rusty-red" href="https://wasmtime.dev/" target="_blank">Wasmtime</a> 
-                        to create processes as WebAssembly instances. Similar to how it’s done in Erlang, Lunatic uses the name Process for actors. 
-                        Lunatic’s processes are lightweight, fast to create and destroy, and the scheduling overhead is low. They are designed for massive concurrency.</p>
+                        to create processes as WebAssembly instances. Similar to how it's done in Erlang, Lunatic uses the name Process for actors. 
+                        Lunatic's processes are lightweight, fast to create and destroy, and the scheduling overhead is low. They are designed for massive concurrency.</p>
                     <p>All processes are scheduled using an async executor and all code running on top of Lunatic will be automatically transformed to be non-blocking. 
                         This is also true for low level languages like C and Rust. From the perspective of the developer, only blocking syscalls are used. 
-                        However, the runtime will take care of actually scheduling another process’ execution when one is waiting on networking traffic or is blocked for another reason. 
+                        However, the runtime will take care of actually scheduling another process' execution when one is waiting on networking traffic or is blocked for another reason. 
                         This way we get the best of both worlds, straightforward development (without async keywords) and the highest performance possible.</p>
                 </div>
 
