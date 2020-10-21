@@ -7,103 +7,111 @@
     </head>
 
     <body class="font-body leading-loose">
-        <div class="header p-5 bg-russian-violet text-rusty-red flex lg:justify-center items-center h-auto">
-            <div class="main flex flex-col items-center">
+        <div class="header p-5 bg-russian-violet text-rusty-red flex lg:justify-center">
+            <div class="hidden lg:flex w-1/6"></div>
+            <div class="main flex flex-col items-center lg:w-4/6">
                 <div class="flex items-center">
                     <img class="h-12 lg:h-20 inline" src="static/moon.svg" alt="moon" >
                     <h1 class="header-title inline">Lunatic</h1>
                 </div>
                 
-                <p class="text-xl lg:text-2xl">This is a cool programming language created for hackers! Check out our documentation!</p>
+                <p class="text-xl lg:text-2xl">A platform for building fast, secure and scalable actor systems.</p>
             </div>
-            <div class="meteors grid grid-cols-2 lg:grid-cols-4 lg:grid-rows-3 gap-4">
-                <img class="h-32 lg:h-20 col-start-1 lg:col-start-4" src="static/meteor.svg" alt="meteor" >
-                <img class="hidden lg:inline h-12 col-start-3 row-start-3" src="static/meteor.svg" alt="meteor" >
-                <img class="h-24 lg:h-16 lg:col-start-2" src="static/meteor.svg" alt="meteor" >
+            <div class="meteors hidden lg:grid grid-cols-4 grid-rows-3 gap-4 w-1/6">
+                <img class="h-20 col-start-1 lg:col-start-4" src="static/meteor.svg" alt="meteor" >
+                <img class="h-12 col-start-3 row-start-3" src="static/meteor.svg" alt="meteor" >
+                <img class="h-16 lg:col-start-2" src="static/meteor.svg" alt="meteor" >
             </div>
         </div>
 
         <div class="flex flex-row items-start">
-            <div class="sidebar p-8 text-xl h-screen shadow-lg hidden lg:flex">
+            <div class="sidebar p-8 text-xl hidden lg:flex sticky top-0 w-1/6">
                 <ul class="cursor-pointer divide-y divide-black divide-opacity-25">
-                    <li><a href="#why-use">Why Use It?</a></li>
-                    <li><a href="#how-to-use">How To Use?</a></li>
-                    <li><a href="#for-who">For Who?</a></li>
-                    <li><a href="#examples">Examples</a></li>
-                    <li><a href="#about">About Me</a></li>
-                    <li><a href="#contact">Contact Info</a></li>
+                    <li><a href="#motivation">Motivation</a></li>
+                    <li><a href="#what-is-lunatic">What is Lunatic?</a></li>
+                    <li><a href="#why-use">Why Should You Use It?</a></li>
+                    <li><a href="#design">Design</a></li>
+                    <li><a href="#contributing">Contributing</a></li>
                 </ul>
             </div>
     
-            <div class="content p-5 w-screen lg:w-3/6">
-                <h2 id="why-use" class="text-tyrian-purple text-3xl">Why use Lunatic?</h2>
-                <p class="text-xl mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-                    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown 
-                    printer took a galley of type and scrambled it to make a type specimen book. 
-                    It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+            <div class="content ml-auto p-5 w-screen lg:w-4/6">
+                <h2 id="motivation" class="text-tyrian-purple text-3xl">Motivation</h2>
+                <div class="text-xl mb-6 space-y-6">
+                    <p>In my career as a software developer I had the opportunity to work with many different programming 
+                        languages (Java, Python, JavaScript, Clojure, Elixir, C and Rust) 
+                        and runtimes (JVM, Node, CPython, Erlang/OTP, etc). 
+                        These tools share many similarities, but some of them left a stronger impression on me than others.</p>
+                    <p><a class="text-rusty-red" href="https://www.erlang.org/" target="_blank">Erlang/OTP</a> 
+                        and the way of structuring execution into actors left a specially strong impression. In a world where many are arguing between a monolithic 
+                        and microservice based application structure approach, Erlang lets you start building your application on a single server (monolithic), 
+                        but later allows you to scale up and get distribution for “free”. 
+                        This is possible because the programming model is based on independent actors communicating through messages. 
+                        There is no difference to these actors if they run on the same machine or are spread across a cluster of machines. 
+                        In most cases you don’t need to adapt your code at all to scale up.</p>
+                    <p>Fault tolerance is another benefit of Erlang. 
+                        The idea of isolating the state of each actor allows you to create truly fault tolerant environments. 
+                        If failure is limited to one actor, the whole system becomes more resilient.</p>
+                    <p>Sadly, Erlang also has some drawbacks. I would not consider it a fast language, therefore the only way of achieving high performance is 
+                        dropping down to C and writing <a class="text-rusty-red" href="http://erlang.org/doc/tutorial/nif.html" target="_blank">NIFs</a>. 
+                        In this case you would lose all the benefits mentioned earlier, and a bug in your C code could take down the whole application. 
+                        If you don’t have bugs in your code, but don’t follow strict rules of writing NIFs, you could end up blocking the execution and endangering your whole application.</p>
+                    <p>I wanted to bring the power of Erlang to other programming languages and at the same time address these shortcomings. 
+                        I felt like there was a unique opportunity to do so with the recent development of 
+                        <a class="text-rusty-red" href="https://webassembly.org/" target="_blank">WebAssembly</a>. That’s how Lunatic’s idea was created.</p>
+                </div>
     
-                <h2 id="how-to-use" class="text-tyrian-purple text-3xl">How to use it?</h2>
-                <p class="text-xl mb-4">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration 
-                    in some form, by injected humour, or randomised words which don't look even slightly believable. 
-                    If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. </p>
+                <h2 id="what-is-lunatic" class="text-tyrian-purple text-3xl">What is Lunatic?</h2>
+                <div class="text-xl mb-6 space-y-6">
+                    <p><a class="text-rusty-red" href="https://github.com/lunatic-lang" target="_blank">Lunatic</a> 
+                        is a set of libraries and a WebAssembly runtime which allows developers to build resilient actor systems.</p>
+                    <p>The people involved in the creation of WebAssembly made it fast, efficient and secure in the browser. 
+                        We can benefit from this development on the backend too. That's why Lunatic chose WebAssembly instances as the abstraction for actors. 
+                        Each instance has its own stack, heap and syscalls. This allows us to have completely isolated execution environments per actor, 
+                        without reaching out to much heavier technologies like Docker. Another benefit of using WebAssembly is that Lunatic applications can be built in any language 
+                        supporting WebAssembly as a target (like C/C++, Rust, AssemblyScript, etc).</p>
+                    <p>The other part of Lunatic are the libraries exposing Lunatic's features to programming languages. 
+                        This includes actor creation, message sending, networking and other functionalities. 
+                        For now there is only support for <a class="text-rusty-red" href="https://crates.io/crates/lunatic" target="_blank">Rust</a>, 
+                        but other languages are coming too. Hold tight!</p>
+                </div>
     
-                <h2 id="for-who" class="text-tyrian-purple text-3xl">For who is it Made?</h2>
-                <p class="text-xl mb-4">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
-                    The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', 
-                    making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, 
-                    and a search for 'lorem ipsum' will uncover many web sites still in their infancy. 
-                    Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-
-                <h2 id="examples" class="text-tyrian-purple text-3xl">Examples</h2>
-                <p class="text-xl mb-4">The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', 
-                    making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, 
-                    and a search for 'lorem ipsum' will uncover many web sites still in their infancy. 
-                    Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-                
-                <div class="flex flex-wrap lg:justify-between">
-                    <div class="my-4 p-5 max-w-sm bg-black rounded-lg shadow-xl">
-                        <code class="text-platinum leading-normal">
-                        const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key], obj)
-                        const compose = (...fns) => res => fns.reduce((accum, next) => next(accum), res)
-                        const unfold = (f, seed) => {
-                            const go = (f, seed, acc) => {
-                            const res = f(seed)
-                            return res ? go(f, res[1], acc.concat([res[0]])) : acc
-                            }
-                            return go(f, seed, [])
-                        }
-                        </code>
-                    </div>
-    
-                    <div class="my-4 p-5 max-w-sm bg-black rounded-lg shadow-xl">
-                        <code class="text-platinum leading-normal">
-                        const pluckDeep = key => obj => key.split('.').reduce((accum, key) => accum[key], obj)
-                        const compose = (...fns) => res => fns.reduce((accum, next) => next(accum), res)
-                        const unfold = (f, seed) => {
-                            const go = (f, seed, acc) => {
-                            const res = f(seed)
-                            return res ? go(f, res[1], acc.concat([res[0]])) : acc
-                            }
-                            return go(f, seed, [])
-                        }
-                        </code>
-                    </div>
+                <h2 id="why-use" class="text-tyrian-purple text-3xl">Why Should You Use It?</h2>
+                <div class="text-xl mb-6 space-y-6">
+                    <p>Lunatic is a good choice for any backend application, such as web applications, real time messaging servers and others. 
+                        It's especially powerful in the networking context, by allowing you to model each connection with an actor. 
+                        This way you get sandboxing per connection and, therefore, additional security. Even if you have a vulnerability in your app, 
+                        it will only be limited to the connection exploiting it.</p>
+                    <p>Moreover, Lunatic tries to stay out of your way. If possible, it will provide bindings to its APIs directly through the standard library of your language of choice. 
+                        We are still not quite there yet, but as standards around WebAssembly 
+                        (like <a class="text-rusty-red" href="https://wasi.dev/" target="_blank">WASI</a>) keep maturing we are getting closer.</p>
+                    <p>There are many features still in development which will bring other benefits to Lunatic, for example hot reloading and 
+                        <a class="text-rusty-red" href="https://erlang.org/doc/design_principles/des_princ.html#supervision-trees" target="_blank">supervision trees</a>.</p>
                 </div>
 
-                <h2 id="about" class="text-tyrian-purple text-3xl">About Me</h2>
-                <p class="text-xl mb-4">Hi, I'm Bernard!
-                I'm an independent consultant, specialized in providing complex web solutions. If you are looking for a complete web 
-                application or just need help with your React.js frontend drop me an email!
-                Previously, I made the browser more awesome at cliqz and wrote software to push boundaries of science for the ATLAS experiment at CERN.
-                If you are interested in reading more of my thoughts check out my blog.</p>
+                <h2 id="design" class="text-tyrian-purple text-3xl">Design</h2>
+                <div class="text-xl mb-6 space-y-6">
+                    <p>Lunatic is written in Rust and uses Mozilla's <a class="text-rusty-red" href="https://wasmtime.dev/" target="_blank">Wasmtime</a> 
+                        to create processes as WebAssembly instances. Similar to how it’s done in Erlang, Lunatic uses the name Process for actors. 
+                        Lunatic’s processes are lightweight, fast to create and destroy, and the scheduling overhead is low. They are designed for massive concurrency.</p>
+                    <p>All processes are scheduled using an async executor and all code running on top of Lunatic will be automatically transformed to be non-blocking. 
+                        This is also true for low level languages like C and Rust. From the perspective of the developer, only blocking syscalls are used. 
+                        However, the runtime will take care of actually scheduling another process’ execution when one is waiting on networking traffic or is blocked for another reason. 
+                        This way we get the best of both worlds, straightforward development (without async keywords) and the highest performance possible.</p>
+                </div>
+
+                <h2 id="contributing" class="text-tyrian-purple text-3xl">Contributing</h2>
+                <div class="text-xl mb-6 space-y-6">
+                    <p>Lunatic is <a class="text-rusty-red" href="https://github.com/lunatic-lang" target="_blank">open source</a> and still early in development. 
+                        There are many interesting problems that need to be solved before it becomes production ready. 
+                        If you are a Rust developer and would like to help, please reach out to me on <a class="text-rusty-red" href="mailto:me@kolobara.com">me@kolobara.com</a> 
+                        or on <a class="text-rusty-red" href="https://twitter.com/bkolobara" target="_blank">Twitter</a>.
+                    </p>
+                </div>
                 
-                <h2 id="contact" class="text-tyrian-purple text-3xl">Contact</h2>
-                <p class="text-xl mb-4">Send me an <a class="text-rusty-red" href="mailto:me@kolobara.com">email</a></p>
-                <p class="text-xl mb-4">Follow me on <a class="text-rusty-red" href="https://twitter.com/bkolobara" target="_blank">Twitter</a> 
-                    and check the <a class="text-rusty-red" href="https://github.com/lunatic-lang" target="_blank">Lunatic</a> project!</p>
             </div>
 
-            <img class="hidden lg:inline pt-5 h-20 col-start-2 w-1/5" src="static/meteor-dark.svg" alt="meteor" >
+            <img class="hidden lg:inline pt-5 h-20 col-start-2 w-1/6" src="static/meteor-dark.svg" alt="meteor" >
         </div>
     </body>
 </html>
