@@ -12,7 +12,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "postcss src/styles.css -o build/output.css",
+    "build": "NODE_ENV=production postcss src/styles.css -o build/output.css",
     "watch": "postcss -w src/styles.css -o build/output.css"
   },
   "author": "",
